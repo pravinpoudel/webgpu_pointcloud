@@ -212,7 +212,7 @@ async function initRenderer() {
       {
         binding: 0,
         visibility: GPUShaderStage.VERTEX,
-        type: "uniform-buffer",
+        buffer: { type: "uniform" },
       },
     ],
   });
@@ -328,9 +328,9 @@ function update(timestamp) {
       // view
       let target = vec3.fromValues(2, 5, 0);
       let r = 5;
-      let x = r * Math.sin(timestamp / 1000) + target[0];
-      let y = r * Math.cos(timestamp / 1000) + target[1];
-      let z = 2;
+      let x = r * Math.sin(timestamp / 10000) + target[0];
+      let y = r * Math.cos(timestamp / 10000) + target[1];
+      let z = 5;
 
       let position = vec3.fromValues(x, y, z);
       let up = vec3.fromValues(0, 0, 1);
